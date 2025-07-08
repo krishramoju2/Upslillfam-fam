@@ -3,7 +3,7 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 import { NextResponse } from 'next/server';
-import cheerio from 'cheerio';
+const cheerio = require('cheerio');
 
 const JOB_SOURCE_URL = 'https://remoteok.com/remote-dev-jobs'; // or change to any other
 
