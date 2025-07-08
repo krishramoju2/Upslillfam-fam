@@ -1,7 +1,7 @@
 // app/api/feedback/route.ts
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
-
+const cheerio = require('cheerio');
 import { NextResponse } from 'next/server';
 
 let feedbackList: { feedback: string; timestamp: string }[] = []; // In-memory storage
