@@ -1,7 +1,7 @@
 // app/api/interns/route.ts
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
-
+const cheerio = require('cheerio');
 import { NextResponse } from 'next/server';
 
 let internCount = 0; // In-memory counter (reset on server restart)
