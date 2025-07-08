@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font smoothing */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Font Variables */
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-dancing: 'Dancing Script', cursive;
+  --font-lobster: 'Lobster', cursive;
+  --font-pacifico: 'Pacifico', cursive;
+}
+
+/* Font Classes */
+.font-dancing {
+  font-family: var(--font-dancing);
+}
+.font-lobster {
+  font-family: var(--font-lobster);
+}
+.font-pacifico {
+  font-family: var(--font-pacifico);
+}
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+/* Backgrounds */
+.bg-weird-gradient {
+  background: radial-gradient(circle at top left, #ff00cc, #3333ff);
+}
+.bg-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Shadow Magic */
+.shadow-magic {
+  box-shadow: 0 0 10px 4px rgba(0, 255, 255, 0.4),
+              0 0 20px 10px rgba(255, 0, 255, 0.2);
+}
+
+/* Hover Effect */
+.hover-bubble {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-bubble:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Wiggle Animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+.animate-wiggle {
+  animation: wiggle 1s infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Resume Section Styles */
+.resume-section {
+  @apply p-6 bg-white shadow-md rounded-lg mb-6;
+  font-family: var(--font-inter);
+  color: #1f2937;
+}
+.resume-header {
+  @apply text-3xl font-bold mb-2 text-gray-800;
+}
+.resume-item {
+  @apply mb-4;
+}
+.resume-divider {
+  @apply border-t border-gray-300 my-4;
+}
+
+/* Postgrad Section */
+.postgrad-section {
+  @apply p-6 bg-gradient-to-br from-white to-purple-50 shadow-md rounded-xl mb-6;
+  font-family: var(--font-inter);
+}
+.postgrad-header {
+  @apply text-2xl font-semibold mb-3 text-purple-900;
+}
+.postgrad-subtitle {
+  @apply text-sm text-purple-700 mb-1;
+}
+.postgrad-field {
+  @apply mb-4;
+}
+
+/* Quote Section */
+.quote-section {
+  @apply text-center mt-10 p-6 rounded-xl shadow bg-indigo-50;
+  font-family: var(--font-inter);
+}
+.quote-text {
+  @apply text-xl italic text-gray-700;
+}
+.quote-author {
+  @apply text-sm font-semibold text-indigo-600;
+}
+
+/* Print Rules */
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-family: var(--font-inter);
+    box-shadow: none !important;
+  }
+
+  .bg-weird-gradient,
+  .bg-glass,
+  .shadow-magic,
+  .hover-bubble,
+  .animate-wiggle,
+  .animate-float {
+    all: unset;
+  }
+
+  .resume-section,
+  .postgrad-section {
+    @apply p-0 shadow-none border-none;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
